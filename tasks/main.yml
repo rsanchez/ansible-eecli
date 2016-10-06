@@ -1,0 +1,8 @@
+---
+- name: Download and install eecli to /usr/local/bin.
+  get_url:
+    url: https://github.com/rsanchez/eecli/releases/download/1.1.0/eecli.phar
+    dest: /usr/local/bin/composer
+    mode: a+x
+    checksum: sha1:401bcd29cfcc712aabb01d766216c207647fd5d4
+  tags: eecli
