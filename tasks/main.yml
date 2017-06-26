@@ -1,8 +1,9 @@
 ---
+- name: Get url of latest eecli release
+  shell: curl --silent https://api.github.com/repos/rsanchez/eecli/releases/latest | /usr/bin/awk '/browser_download_url/ { print $2 }' | /usr/bin/sed 's/"//g'
+  register: latest_release
 - name: Download and install eecli to /usr/local/bin.
   get_url:
-    url: https://github.com/rsanchez/eecli/releases/download/1.1.0/eecli.phar
-    dest: /usr/local/bin/composer
+    url: {{ latest_release.stdout }}
+    dest: /usr/local/bin/eecli
     mode: a+x
-    checksum: sha1:401bcd29cfcc712aabb01d766216c207647fd5d4
-  tags: eecli
