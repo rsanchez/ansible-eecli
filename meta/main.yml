@@ -1,6 +1,7 @@
 galaxy_info:
   author: rsanchez
+  description: eecli
   license: license (MIT)
   min_ansible_version: 2
-  galaxy_tags: ["expressionengine", "ee", eecli"]
+  galaxy_tags: ["expressionengine", "ee", "eecli"]
 dependencies: []
